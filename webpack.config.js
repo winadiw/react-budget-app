@@ -28,6 +28,7 @@ module.exports = {
   },
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "public"), //to serve using webpack-dev-server
+    contentBase: path.join(__dirname, "public"), //to serve using webpack-dev-server,
+    historyApiFallback: true //for client side routing
   },
 };

@@ -1,0 +1,16 @@
+html {
+  font-size: 62.5%; //to easily convert and handle rem with px formatting
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}

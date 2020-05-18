@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/react", "@babel/env"],
+  "plugins": ["transform-class-properties"] //for transforming 'this' syntax and arrow function binding
+}

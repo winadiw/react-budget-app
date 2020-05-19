@@ -2,7 +2,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/playground/redux-101.js", //entry point for ReactDOM
+  entry: "./src/playground/destructuring.js", //entry point for ReactDOM
   output: {
     //output dir to server
     path: path.join(__dirname, "public"),

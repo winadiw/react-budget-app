@@ -2,7 +2,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/playground/hoc.js", //entry point for ReactDOM
+  entry: "./src/app.js", //entry point for ReactDOM
   output: {
     //output dir to server
     path: path.join(__dirname, "public"),

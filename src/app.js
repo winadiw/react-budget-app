@@ -35,7 +35,6 @@ store.dispatch(
 );
 
 const state = store.getState();
-console.log(state);
 console.log(getVisibleExpenses(state.expenses, state.filters));
 
 const jsx = (

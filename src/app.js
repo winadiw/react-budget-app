@@ -27,7 +27,7 @@ store.dispatch(
   })
 );
 
-store.dispatch(setTextFilter("gas"));
+store.dispatch(setTextFilter("bill"));
 
 const state = store.getState();
 console.log(state);

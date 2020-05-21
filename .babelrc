@@ -1,4 +1,14 @@
 {
-  "presets": ["@babel/react", "@babel/env"],
-  "plugins": ["transform-class-properties"] //for transforming 'this' syntax and arrow function binding
+  "env": {
+    "development": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "@babel/plugin-proposal-class-properties"
+      ],
+      "presets": ["@babel/preset-react"]
+    }
+  }
 }

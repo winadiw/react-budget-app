@@ -9,12 +9,12 @@ test('should setup remove expense action object', () => {
 });
 
 test('should setup edit expense action object', () => {
-  const action = editExpense('123abc', { notes: 'New note value' });
+  const action = editExpense('123abc', { note: 'New note value' });
   expect(action).toEqual({
     type: 'EDIT_EXPENSE',
     id: '123abc',
     updates: {
-      notes: 'New note value'
+      note: 'New note value'
     }
   });
 });
@@ -24,7 +24,7 @@ test('should setup add expense action object with provided values', () => {
     description: 'Rent',
     amount: 109500,
     createdAt: 1000,
-    notes: 'This was last months rent'
+    note: 'This was last months rent'
   };
   const action = addExpense(expenseData);
   expect(action).toEqual({
@@ -43,7 +43,7 @@ test('should setup add expense action object with default values', () => {
     expense: {
       id: expect.any(String),
       description: '',
-      notes: '',
+      note: '',
       amount: 0,
       createdAt: 0
     }

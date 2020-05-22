@@ -42,10 +42,10 @@ test("should setup add expense action object with provided values", () => {
 
 test("should setup add expense action object with default values", () => {
   const defaultValue = {
-    description = "",
-    notes = "",
-    amount = 0,
-    createdAt = 0,
+    description: "",
+    notes: "",
+    amount: 0,
+    createdAt: 0,
   };
 
   const action = addExpense();

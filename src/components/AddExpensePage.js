@@ -5,7 +5,7 @@ import { addExpense } from "../actions/expenses";
 
 export class AddExpensePage extends React.Component {
   onSubmit = (expense) => {
-    this.props.onSubmit(expense);
+    this.props.addExpense(expense);
     this.props.history.push("/"); //navigating to home page by react-router
   };
 
@@ -21,7 +21,7 @@ export class AddExpensePage extends React.Component {
 
 //For easier testing
 const mapDispatchToProps = (dispatch) => ({
-  onSubmit: (expense) => dispatch(addExpense(expense)),
+  addExpense: (expense) => dispatch(addExpense(expense)),
 });
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);

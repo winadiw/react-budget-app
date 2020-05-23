@@ -1,2 +1,2 @@
-# react-indecision-app
-Indecision App using React
+# react-expensify-app
+Expensify App using React

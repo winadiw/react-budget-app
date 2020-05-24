@@ -14,10 +14,41 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
-})
+// Setup "expenses" with three items (description, note, amount, createdAt)
+
+database.ref('expenses').push({
+  description: 'Rent',
+  note: '',
+  amount: 109500,
+  createdAt: 976123498763
+});
+
+database.ref('expenses').push({
+  description: 'Phone bill',
+  note: '',
+  amount: 5900,
+  createdAt: 976123498763
+});
+
+database.ref('expenses').push({
+  description: 'Food',
+  note: '',
+  amount: 1200,
+  createdAt: 976123498763
+});
+
+
+// database.ref('notes/-Krll52aVDQ3X6dOtmS7').remove();
+
+// database.ref('notes').push({
+//   title: 'Course Topics',
+//   body: 'React Native, Angular, Python'
+// });
+
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+// })
 
 // Setup data sub -> Andrew is a Software Developer at Amazon.
 

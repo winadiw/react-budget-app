@@ -15,7 +15,7 @@
       ]
     },
     "production": {
-      "presets": ["@babel/react", "@babel/env", "@babel/preset-react"],
+      "presets": ["@babel/react", "@babel/env"],
       "plugins": [
         "transform-es2015-modules-commonjs",
         "@babel/plugin-proposal-class-properties"

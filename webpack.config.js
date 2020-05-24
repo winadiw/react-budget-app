@@ -1,8 +1,11 @@
 // entry -> output
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
   const isProduction = env === "production";
+  const CSSExtract = new MiniCssExtractPlugin({ filename: "styles.css" });
+
   return {
     entry: "./src/app.js", //entry point for ReactDOM
     output: {
@@ -20,10 +23,27 @@ module.exports = (env) => {
         },
         {
           test: /\.s?css$/,
-          use: ["style-loader", "css-loader", "sass-loader"],
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
         },
       ],
     },
+    plugins: [CSSExtract],
     devtool: isProduction ? "source-map" : "cheap-module-eval-source-map", //handle super large files ize
     devServer: {
       contentBase: path.join(__dirname, "public"), //to serve using webpack-dev-server,

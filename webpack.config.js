@@ -10,7 +10,7 @@ module.exports = (env) => {
     entry: "./src/app.js", //entry point for ReactDOM
     output: {
       //output dir to server
-      path: path.join(__dirname, "public"),
+      path: path.join(__dirname, "public", "dist"),
       filename: "bundle.js",
     },
     module: {
@@ -48,6 +48,7 @@ module.exports = (env) => {
     devServer: {
       contentBase: path.join(__dirname, "public"), //to serve using webpack-dev-server,
       historyApiFallback: true, //for client side routing
+      publicPath: "/dist/"
     },
   };
 };

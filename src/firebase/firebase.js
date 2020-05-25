@@ -1,13 +1,13 @@
 import * as firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBYnd-Z_FvGtSBM3s-4GglJhQ0U6PTWlds",
-  authDomain: "win-expensify-app.firebaseapp.com",
-  databaseURL: "https://win-expensify-app.firebaseio.com",
-  projectId: "win-expensify-app",
-  storageBucket: "win-expensify-app.appspot.com",
-  messagingSenderId: "591365617922",
-  appId: "1:591365617922:web:8dec68513289e29942aa1b",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 firebase.initializeApp(firebaseConfig);

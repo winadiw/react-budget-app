@@ -3,7 +3,7 @@ import database from "../firebase/firebase";
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
   type: "ADD_EXPENSE",
-  expense
+  expense,
 });
 
 //For async action
@@ -18,12 +18,17 @@ export const startAddExpense = (expenseData = {}) => {
 
     const expense = { description, note, amount, createdAt };
 
-    return database.ref("expenses").push(expense).then((snapshot) => {
-      dispatch(addExpense({
-        id: snapshot.key,
-        ...expense
-      }));
-    })
+    return database
+      .ref("expenses")
+      .push(expense)
+      .then((snapshot) => {
+        dispatch(
+          addExpense({
+            id: snapshot.key,
+            ...expense,
+          })
+        );
+      });
   };
 };
 
@@ -39,3 +44,27 @@ export const editExpense = (id, updates) => ({
   id,
   updates,
 });
+
+//SET_EXPENSES
+export const setExpenses = (expenses) => ({
+  type: "SET_EXPENSES",
+  expenses,
+});
+
+export const startSetExpenses = () => {
+  return (dispatch) => {
+    return database
+      .ref("expenses")
+      .once("value")
+      .then((snapshot) => {
+        const fetchExpenses = [];
+        snapshot.forEach((childSnapshot) => {
+          fetchExpenses.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val(),
+          });
+        });
+        dispatch(setExpenses(fetchExpenses));
+      });
+  };
+};

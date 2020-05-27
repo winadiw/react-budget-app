@@ -20,7 +20,7 @@ module.exports = (env) => {
   const CSSExtract = new MiniCssExtractPlugin({ filename: "styles.css" });
 
   return {
-    entry: "./src/app.js", //entry point for ReactDOM
+    entry: ["babel-polyfill","./src/app.js"], //entry point for ReactDOM with babel polyfill
     output: {
       //output dir to server
       path: path.join(__dirname, "public", "dist"),
